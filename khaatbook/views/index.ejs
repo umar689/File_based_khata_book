@@ -20,24 +20,29 @@
             </div>
         </nav>
         <div class="px-10 hisaabs">
+            <% if(files.length){ %>
             <h3 class="capitalize text-2xl font-medium mb-5 mt-10 tracking-tight">All hisaab kitaab</h3>
-
+            
+            <% for(let i=0;i<files.length;i++){ %>
             <div class="hisaab w-fit items-center py-3 mb-3 px-5 gap-20 bg-blue-500 flex justify-between rounded-md">
                 <div class="flex gap-4 text-white items-center">
+                    
                     <h3 class="text-2xl">
-                        Hello
+                        <%= files[i].split('.')[0] %>
                     </h3>
-                    <a href="/hisaab"><i
+                    <a href="/view/<%=files[i]%>"><i
                             class="w-6 h-6 text-blue-500 flex items-center justify-center bg-white rounded-full ri-arrow-right-line"></i></a>
                 </div>
                 <div class="flex gap-3 items-center">
-                    <a href="/edit"><i class="text-white ri-pencil-line"></i></a>
-                    <a href="/delete"><i
+                    <a href="/edit/<%=files[i]%>"><i class="text-white ri-pencil-line"></i></a>
+                    <a href="/delete/<%=files[i]%>"><i
                             class="w-6 h-6 text-red-500 flex items-center justify-center bg-white rounded-full ri-delete-bin-line"></i></a>
                 </div>
             </div>
-            <h3 class="text-zinc-500">(only show if) nothing to show, create hisaabs to see something.</h3>
-
+             <% } %>
+             <% } else { %>
+            <h3 class="text-zinc-500"> nothing to show, create hisaabs to see something.</h3>
+            <%}%>
 
         </div>
     </main>

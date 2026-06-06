@@ -21,11 +21,10 @@
         </nav>
         <div class="px-10 hisaabs">
             <h3 class="text-2xl font-medium mb-5 mt-10 tracking-tight">you're editing hisaab of <span
-                    class="text-blue-500">12-03-2024</span> date</h3>
-            <form class="" action="/update" method="post">
+                    class="text-blue-500"><%= title.split('.')[0]%></span> </h3>
+            <form class="" action="/update/<%=title%>" method="POST" >
                 <textarea class="block w-1/2 px-3 py-2 resize-none bg-zinc-200 rounded-md min-h-96 outline-none"
-                    placeholder="write your hisaab."
-                    name="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates dolorum consectetur molestias nulla!</textarea>
+                    placeholder="write your hisaab." name="data"><%=content%></textarea>
                 <input type="submit" class="block mt-5 px-5 py-3 bg-blue-500 text-white rounded-md"
                     value="Update Hisaab">
             </form>
